@@ -20,7 +20,7 @@ export default function Home() {
         .catch(function (error) {
           console.log(error);
         });
-    }, 3000);
+    }, 2000);
 
     return () => clearInterval(intervalId);
   }, []);
