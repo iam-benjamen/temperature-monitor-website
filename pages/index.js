@@ -34,7 +34,7 @@ export default function Home() {
       <Box width={"100vw"} height={"100vh"} padding={"3rem"}>
         <VStack>
           <Heading fontSize={"2.5rem"} fontFamily={"Roboto"} color={"darkblue"}>
-            Temprature Monitor
+            Temperature Monitor
           </Heading>
 
           <Text fontSize={"1.25rem"}>Project by Ayoola Mayowa</Text>
