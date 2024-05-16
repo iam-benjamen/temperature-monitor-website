@@ -32,23 +32,16 @@ export default function Home() {
         <title>Remote Temperature Monitor</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
+      <Nav />
       <Box
-        width={"100vw"}
-        height={"100vh"}
-        padding={"3rem"}
+        paddingTop={'6vh'}
+        paddingX={"3rem"}
         display={"flex"}
         flexDir={"column"}
         justifyContent={"space-between"}
         // alignItems={'center'}
       >
-        <Nav />
-        <VStack>
-          <Heading fontSize={"2.5rem"} fontFamily={"Roboto"} color={"darkblue"}>
-            Remote Temperature Monitor
-          </Heading>
 
-          <Text fontSize={"1.5rem"}>Project by Ayoola Mayowa</Text>
-        </VStack>
 
         <Box
           display={"flex"}
@@ -74,12 +67,11 @@ export default function Home() {
           </Text>
         </Box>
         <HStack alignItems={"center"} justifyContent={"center"}>
-          <Box width={"30%"} height={"35rem"}>
+          <Box width={"35%"} height={"35rem"}>
             <RadialGauge
               value={data?.allItems?.slice(-1)[0].temperature || 0}
             />
           </Box>
-
           <Chart1 chartdata={data?.allItems.slice(-15)} />
         </HStack>
       </Box>

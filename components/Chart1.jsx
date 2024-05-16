@@ -86,7 +86,7 @@ const Chart1 = ({ chartdata }) => {
     };
 
     return (
-        <Box width={'45%'} height={'35rem'}>
+        <Box width={'45%'} height={'30rem'}>
             <Line options={options} data={data} />
         </Box>
     );
