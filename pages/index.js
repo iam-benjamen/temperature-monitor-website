@@ -6,6 +6,7 @@ import Head from "next/head";
 import axios from "axios";
 import Chart1 from "../components/Chart1";
 import Nav from "../components/NavBar";
+import Footer from "../components/Footer";
 
 export default function Home() {
   const [data, setData] = useState(null);
@@ -15,16 +16,19 @@ export default function Home() {
       axios
         .get("https://temperature-sensor-project.onrender.com/api/items")
         .then(function (response) {
-          console.log(response.data);
+          // console.log(response.data);
           setData(response.data);
         })
         .catch(function (error) {
           console.log(error);
         });
-    }, 2000);
+    }, 3000);
 
     return () => clearInterval(intervalId);
   }, []);
+
+  console.log(data?.allItems);
+  console.log(data?.allItems?.slice(-1)[0].temperature);
 
   return (
     <div>
@@ -34,47 +38,49 @@ export default function Home() {
       </Head>
       <Nav />
       <Box
-        paddingTop={'6vh'}
+        justifyContent={"space-between"}
+        paddingTop={"6vh"}
         paddingX={"3rem"}
         display={"flex"}
         flexDir={"column"}
-        justifyContent={"space-between"}
         // alignItems={'center'}
       >
-
-
         <Box
           display={"flex"}
           flexDir={"column"}
           alignSelf={"center"}
           w={"30%"}
-          height={"7rem"}
+          minHeight={"7rem"}
           borderRadius={"2rem"}
           bg={"darkblue"}
           alignItems={"center"}
           p={"1rem"}
         >
-          <Text fontWeight={700} fontSize={"1.25rem"} color={"white"}>
-            Current Temperature
+          <Text
+            fontWeight={700}
+            fontFamily={"monospace"}
+            fontSize={"1.35rem"}
+            color={"white"}
+          >
+            Current Temperature Reading
           </Text>
           <Text
             pt={".5rem"}
             fontWeight={700}
             fontSize={"1.75rem"}
             color={"white"}
+            fontFamily={"monospace"}
           >
             {`${data?.allItems?.slice(-1)[0].temperature || 0}`}°C
           </Text>
         </Box>
         <HStack alignItems={"center"} justifyContent={"center"}>
-          <Box width={"35%"} height={"35rem"}>
-            <RadialGauge
-              value={data?.allItems?.slice(-1)[0].temperature || 0}
-            />
-          </Box>
+          <RadialGauge value={data?.allItems?.slice(-1)[0].temperature || 0} />
+
           <Chart1 chartdata={data?.allItems.slice(-15)} />
         </HStack>
       </Box>
+      <Footer />
     </div>
   );
 }
