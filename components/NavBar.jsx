@@ -79,17 +79,42 @@ const Nav = () => {
             <DrawerBody>
               <VStack gap={"3rem"}>
                 <Link href={"/"}>
-                  <Text fontFamily={'monospace'} color={'darkblue'} fontWeight={700} fontSize={"1.5rem"}>
+                  <Text
+                    fontFamily={"monospace"}
+                    color={"darkblue"}
+                    fontWeight={700}
+                    fontSize={"1.5rem"}
+                  >
                     Home
                   </Text>
                 </Link>
+                <Link href={"/history"}>
+                  <Text
+                    fontFamily={"monospace"}
+                    color={"darkblue"}
+                    fontWeight={700}
+                    fontSize={"1.5rem"}
+                  >
+                    History
+                  </Text>
+                </Link>
                 <Link href={"/project"}>
-                  <Text fontFamily={'monospace'} color={'darkblue'} fontWeight={700} fontSize={"1.5rem"}>
+                  <Text
+                    fontFamily={"monospace"}
+                    color={"darkblue"}
+                    fontWeight={700}
+                    fontSize={"1.5rem"}
+                  >
                     About Project
                   </Text>
                 </Link>
                 <Link href={"/team"}>
-                  <Text fontFamily={'monospace'} color={'darkblue'} fontWeight={700} fontSize={"1.5rem"}>
+                  <Text
+                    fontFamily={"monospace"}
+                    color={"darkblue"}
+                    fontWeight={700}
+                    fontSize={"1.5rem"}
+                  >
                     About Team
                   </Text>
                 </Link>

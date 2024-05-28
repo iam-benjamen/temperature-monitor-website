@@ -1,12 +1,10 @@
-import { Heading, Text, Box, VStack, HStack } from "@chakra-ui/react";
+import { Text, Box, HStack } from "@chakra-ui/react";
 import { useEffect, useState } from "react";
 
 import RadialGauge from "../components/radialGuage";
 import Head from "next/head";
 import axios from "axios";
 import Chart1 from "../components/Chart1";
-import Nav from "../components/NavBar";
-import Footer from "../components/Footer";
 
 export default function Home() {
   const [data, setData] = useState(null);
@@ -16,7 +14,6 @@ export default function Home() {
       axios
         .get("https://temperature-sensor-project.onrender.com/api/items")
         .then(function (response) {
-          // console.log(response.data);
           setData(response.data);
         })
         .catch(function (error) {
@@ -36,7 +33,6 @@ export default function Home() {
         <title>Remote Temperature Monitor</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Nav />
       <Box
         justifyContent={"space-between"}
         paddingTop={"6vh"}
@@ -61,6 +57,7 @@ export default function Home() {
             fontFamily={"monospace"}
             fontSize={"1.35rem"}
             color={"white"}
+            textAlign={'center'}
           >
             Current Temperature Reading
           </Text>
@@ -80,7 +77,6 @@ export default function Home() {
           <Chart1 chartdata={data?.allItems.slice(-15)} />
         </HStack>
       </Box>
-      <Footer />
     </div>
   );
 }

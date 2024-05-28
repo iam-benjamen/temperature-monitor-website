@@ -1,11 +1,9 @@
 import { Heading, Divider, Text, Box } from "@chakra-ui/react";
-import Footer from "../components/Footer";
-import Nav from "../components/NavBar";
+
 
 const AboutProject = () => {
   return (
-    <Box minH={"100vh"}>
-      <Nav />
+    <Box>
       <Heading
         color={"darkblue"}
         textAlign={"center"}
@@ -27,8 +25,7 @@ const AboutProject = () => {
           fontSize={"1.25rem"}
           textAlign={"justify"}
           lineHeight={"2rem"}
-          fontFamily={"fantasy"}
-          fontWeight={500}
+          fontWeight={400}
         >
           The centrality of vital signs (like temperature) monitoring to good
           health and improved health service delivery cannot be overemphasized.
@@ -50,8 +47,7 @@ const AboutProject = () => {
           w={"70%"}
           textAlign={"justify"}
           lineHeight={"2rem"}
-          fontFamily={"fantasy"}
-          fontWeight={500}
+          fontWeight={400}
         >
           The wearable device will address the limitations of manual tracking
           methods, enable patients to monitor their own health, and provide
@@ -65,7 +61,6 @@ const AboutProject = () => {
           with Autodesk Fusion and 3D-printed.
         </Text>
       </Box>
-      <Footer />
     </Box>
   );
 };
